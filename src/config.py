@@ -27,9 +27,9 @@ class Config():
                 self._config = json.load(config_fp)
         except FileNotFoundError:
             emit("warning: no config file found.")
-            emit("The default filename has changed. You may need to rename")
+            emit("The default filename has changed. Attempting rename of:")
             emit(OLD_DEFAULT_CONFIG_FILE_NAME)
-            emit("to")
+            emit("\nto:")
             emit(DEFAULT_CONFIG_FILE_NAME)
             self._config = {}
         except json.JSONDecodeError:
